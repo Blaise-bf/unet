@@ -496,7 +496,7 @@ class UNet_3Plus_DeepSup(nn.Module):
         d2 = self.upscore2(d2) # 128->256
 
         d1 = self.outconv1(hd1) # 256
-        return F.sigmoid(d1), F.sigmoid(d2), F.sigmoid(d3), F.sigmoid(d4), F.sigmoid(d5)
+        return d1, d2, d3, d4, d5
     
 '''
     UNet 3+ with deep supervision and class-guided module
